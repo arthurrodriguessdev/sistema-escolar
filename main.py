@@ -45,7 +45,10 @@ def cadastrar_aluno():
 
     else:
         nome_aluno = input("\nInforme o nome do aluno: ").title()
-        alunos[codigo_registro_aluno] = {"Nome do aluno": nome_aluno}
+        alunos[codigo_registro_aluno] = {
+        "Nome do aluno": nome_aluno,
+        'Disciplinas': {}}
+        
         print("\nAluno cadastrado com sucesso!")
 
 
@@ -64,7 +67,7 @@ def matricular_alunos_disciplinas():
 
         if nome_disciplina in DISCIPLINAS_PERMITIDAS:
             if nome_disciplina not in alunos[selecionar_aluno]:
-                alunos[selecionar_aluno]['Nome do aluno']['Disciplinas']= {'Disciplina': nome_disciplina}
+                alunos[selecionar_aluno]['Disciplinas']= {'Disciplina': nome_disciplina}
 
                 print("\nAluno matriculado com sucesso!")
 
